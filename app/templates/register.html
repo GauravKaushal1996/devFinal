@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% if session['logged_in'] %}
+<p>You Are Already Logged in!</p>
+<p>Please Logout To Register</p>
+<a href="/logout">Logout</a> <br> <br>
+<a href="/chatroom">Goto chatroom</a>
+{% else %}
+
+<h2>Register</h2>
+<form action="/register/" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Sign Up">
+</form>
+{% endif %}
+{% endblock %}
